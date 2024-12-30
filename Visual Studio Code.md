@@ -1,17 +1,21 @@
 # Capstone Project 1 (Purpose)
 
-In this project, I have decided to create an application that allows clients to request services for their vehicles when it's broken down on the road.
+For this project, I have decided to create an application that allows clients to request services for their vehicles when they break down on the road. I will focus mainly on the back end of the project.
 
-The idea is to make an Imagenary LLC company that provides roadside services, which includes: 
+I will create a mobile app and website that provide roadside services. Clients can request services using their phones or computers.
 
-1. Battery services: We allow clients to request the services through the app with features that allow users to track the driver and secure chat through the application. The battery service will include jump start and battery replacement at two different prices.
+My goal is for it to be an app equipped with options of services that allow users to request services like tire change, battery services, or lockout.
 
-2. Tire change: With a tire change, we again allow clients to track drivers and offer options for patching a tire or filling it with air.
+The users can request the services below, which allow them to track drivers and get an ETA.
+
+1. Battery services: We allow clients to request the services through the app with features enabling users to track the driver and secure chat through the application. The battery service will include jump start and battery replacement at two different prices.
+
+2. Tire change: With a tire change, we again allow clients to track drivers and offer options for patching or filling a tire with air.
 
 And like these two services and so on...
 
 
-I will create an API for the application, with external APIs for tracking and secure chat with the driver. I may also create an external API for creating an account that allows clients to add personal information.
+I will create an API for the application, with external APIs for tracking and secure chat with the driver. I may also make an external API for creating an account that allows clients to add personal information.
 
 
 Additional features that will make the app outstanding:
@@ -56,6 +60,6 @@ Third-Party APIs:
 3. Firebase authentication for the secure login/signup.
 	https://firebase.google.com/docs/auth/
 	
-4. ClickSend SMS for the emergency SOS feature.
+4. Click Send SMS for the emergency SOS feature.
 	 https://developers.clicksend.com/
 	
