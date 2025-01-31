@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Create Admin</h1>
+<form method="POST" action="{{ url_for('create_admin') }}">
+    <div class="mb-3">
+        <label for="email" class="form-label">User Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Promote to Admin</button>
+</form>
+{% endblock %}

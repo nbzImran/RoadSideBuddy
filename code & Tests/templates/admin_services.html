@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Manage Services</h2>
+    <table class="table table-striped table-hover bg-light">
+        <thead class="table-dark">
+            <tr>
+                <th>Service ID</th>
+                <th>Service Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for service in services %}
+            <tr>
+                <td>{{ service.user_id }}</td>
+                <td>{{ service.service_id }}</td>
+                <td>
+                    <form action="{{ url_for('admin_delete_service', service_id=service.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this service?');">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if not services %}
+    <p class="text-muted text-center">No services available to manage.</p>
+    {% endif %}
+</div>
+{% endblock %}

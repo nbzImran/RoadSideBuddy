@@ -1,0 +1,170 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: #000; /* Solid black background */
+    color: #ff8c00; /* Orange text for readability */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #111; /* Slightly lighter black for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4); /* Orange shadow */
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #ff8c00; /* Orange headings for consistency */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: #ff8c00; /* Orange text */
+}
+
+table th,
+table td {
+    border: 1px solid #8e6f6f; /* Lighter black for borders */
+    padding: 10px;
+    text-align: left;
+    color: aliceblue;
+}
+
+
+
+table th {
+    background-color: #222; /* Slightly darker black for header */
+    color: #ff8c00; /* Orange header text */
+}
+
+td.table-row {
+    color: aliceblue;
+}
+
+
+table tr:nth-child(even) {
+    background-color: #1a1a1a; /* Slightly lighter black for rows */
+}
+
+
+table tr:hover {
+    background-color: #333; /* Highlight row on hover */
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000; /* Black text */
+    background-color: #ff8c00; /* Vibrant orange background */
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffa726; /* Lighter orange on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 4px 8px rgba(255, 140, 0, 0.6);
+}
+
+button:active {
+    transform: translateY(0); /* Reset on click */
+    box-shadow: none; /* Remove shadow on click */
+}
+
+/* Flash Messages */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #000;
+    background-color: #ff8c00; /* Orange background */
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert-dismissible .btn-close {
+    color: #000;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Cards */
+.card {
+    background-color: #111; /* Slightly lighter black for cards */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 140, 0, 0.6); /* Orange shadow */
+    margin-bottom: 20px;
+    color: #ff8c00; /* Orange text */
+}
+
+.card-header {
+    background-color: #1a1a1a; /* Dark black for header */
+    color: #ff8c00; /* Orange header text */
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

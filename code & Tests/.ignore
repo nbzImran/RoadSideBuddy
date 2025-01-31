@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+*.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Flask and database
+instance/
+*.sqlite3
+*.db
+
+# Logs and local environment
+*.log
+*.out
+*.err
+logs/
+debug.log
+*.pid
+
+# Firebase credentials and API keys
+firebase.json
+*.firebase
+*.pem
+*.p12
+*.crt
+*.key
+
+# Configuration files
+.env
+*.ini
+*.cfg
+config.py
+config.yaml
+config.json
+
+# Pyrebase and Firebase Admin SDK
+firebase_admin.json
+firebase_config.json
+*.serviceAccountKey.json
+
+# PyCharm project files
+.idea/
+
+# VSCode settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db

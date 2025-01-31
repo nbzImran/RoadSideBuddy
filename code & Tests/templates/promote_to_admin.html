@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Promote to Admin</h1>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- Promotion Form -->
+    <div class="card mb-5">
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('promote_to_admin') }}">
+                {{ form.hidden_tag() }}  <!-- CSRF Protection if Flask-WTF is used -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">User Email</label>
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter user's email" 
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Promote to Admin</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Users Table -->
+    <h2 class="mb-3">All Users</h2>
+    {% if users %}
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Is Admin</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>
+                        <span class="badge {{ 'bg-success' if user.is_admin else 'bg-secondary' }}">
+                            {{ 'Yes' if user.is_admin else 'No' }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="text-muted text-center">No users found.</p>
+    {% endif %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

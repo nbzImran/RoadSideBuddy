@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - Roadside Buddy{% endblock %}
+
+{% block content %}
+    <h1>Update Profile</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            {{ form.name.label(class="form-label") }}
+            <input type="text" class="form-control" name="name" value="{{ form.name.data }}" required>
+        </div>
+
+        <div class="mb-3">
+            {{ form.email.label(class="form-label") }}
+            <input type="email" class="form-control" name="email" value="{{ form.email.data }}" readonly>
+        </div>
+
+        <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control", type="password") }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+{% endblock %}

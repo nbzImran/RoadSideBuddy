@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <!-- Sidebar Section -->
+    {% if current_user.is_authenticated %}
+    <div class="d-flex">
+        <!-- <div class="bg-light border-end" style="width: ; min-height: 100vh;">
+            <ul class="nav flex-column p-3">
+                <li class="nav-item mb-2">
+                    <a href="/history" class="btn btn-primary w-100">History</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="/logout" class="btn btn-danger w-100">Logout</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="/profile" class="btn btn-outline-secondary w-100">Profile</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="mailto:admin@example.com?subject=Support Request&body=Hi Admin," class="btn btn-hazard">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+        <div class="container mt-3">
+            <h1 class="text-center mb-4">Welcome back, {{ current_user.name }}!</h1>
+            <p class="lead text-center">Choose from our available services:</p>
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <a href="/request-service?service_id=tire_change" class="btn btn-outline-primary w-100 mb-3">Tire Change</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/request-service?service_id=battery_service" class="btn btn-outline-primary w-100 mb-3">Battery Service</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/request-service?service_id=lockout" class="btn btn-outline-primary w-100 mb-3">Lockout</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/request-service?service_id=fuel_delivery" class="btn btn-outline-primary w-100 mb-3">Fuel Delivery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <!-- Main Content for Guests -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Welcome to Roadside Buddy</h1>
+        <p class="lead text-center">The fastest way to get help when you're stranded on the road!</p>
+        <div class="d-flex justify-content-center mt-4">
+            <a href="/login" class="btn btn-primary btn-lg me-3">Log In</a>
+            <a href="/signup" class="btn btn-success btn-lg">Sign Up</a>
+        </div>
+    </div>
+    {% endif %}
+    
+
+
+    
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %}
